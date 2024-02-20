@@ -1,0 +1,11 @@
+{
+  "name": "mern-stack-list-app",
+  "version": "1.0.0",
+  "description": "list app built with the MERN stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason",
+  "license": "ISC"
+}
