@@ -18,5 +18,5 @@ router.get('/', (req,res) => {
     .then(items => res.json(items))
 })
 
-module.export = router;
+module.exports = router;
 
