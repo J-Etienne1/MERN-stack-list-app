@@ -4,9 +4,6 @@ const router = express.Router();
 //Item Model
 const Item = require("../../models/item");
 
-
-
-
 // @route GET api/items
 // @desc Get All Items
 // @access Public
@@ -15,8 +12,6 @@ router.get("/", (req, res) => {
     .sort({ date: -1 })
     .then((items) => res.json(items));
 });
-
-
 
 
 
@@ -36,15 +31,18 @@ router.post("/", (req, res) => {
 
 
 
+
 // @route DELETE api/items/:id
 // @desc Delete An Item
 // @access Public
 router.delete("/:id", (req, res) => {
-    Item.deleteOne({_id: req.params.id}).then(()=> res.json({success: true}))
-    .catch(err => res.status(404).json({msg: 'Deletion Failed', 'err: ': err, success: false}));
-})
+  Item.deleteOne({ _id: req.params.id })
+    .then(() => res.json({ success: true }))
+    .catch((err) =>
+      res
+        .status(404)
+        .json({ msg: "Deletion Failed", "err: ": err, success: false })
+    );
+});
 
 module.exports = router;
-
-
-
