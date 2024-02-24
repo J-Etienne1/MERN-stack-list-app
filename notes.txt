@@ -5,3 +5,9 @@ but as using nodemon to continuously watch server for changes we use npm run ser
 
 // Run Frontend:
 Navigate to Client folder and run npm start
+
+
+
+// Running Frontend & Backend concurrently
+in main folder run npm run dev
+needed to remove proxy in server package.json as was causing issues with running react
