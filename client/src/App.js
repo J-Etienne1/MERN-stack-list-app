@@ -5,13 +5,18 @@ import ShoppingList from './components/ShoppingList';
 import { Button, ListGroup, ListGroupItem } from 'reactstrap'; 
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
+import { Provider } from 'react-redux';
+import store from './store';
+
 
 function App(props) {
   return (
+    <Provider store={store}>
     <div className="App">
       <AppNavbar/>
       <ShoppingList/>
     </div>
+    </Provider>
   );
 }
 
