@@ -10,7 +10,6 @@ function App(props) {
   return (
     <div className="App">
       <AppNavbar/>
-      
       <ShoppingList/>
     </div>
   );
