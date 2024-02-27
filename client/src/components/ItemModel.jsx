@@ -84,4 +84,8 @@ class ItemModel extends Component {
   }
 }
 
-export default connect()(ItemModel);
+const mapStateToProps = (state) => ({
+  item: state.item,
+});
+
+export default connect(mapStateToProps, { addItem })(ItemModel);
