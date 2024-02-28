@@ -7,12 +7,8 @@ import {
 } from "../actions/types";
 
 const initialState = {
-  items: [
-    { id: uuid(), name: "Eggs" },
-    { id: uuid(), name: "Milk" },
-    { id: uuid(), name: "Steak" },
-    { id: uuid(), name: "Chocs" },
-  ],
+  items: [],
+  loading: false,
 };
 
 export default function (state = initialState, action, itemReducer) {
@@ -30,6 +26,11 @@ export default function (state = initialState, action, itemReducer) {
       return {
         ...state,
         items: [action.payload, ...state.items],
+      };
+      case ITEMS_LOADING:
+      return {
+        ...state,
+        loading: true,
       };
     default:
       return state;
