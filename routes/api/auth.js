@@ -47,6 +47,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
 /**
  * @route   POST api/users
  * @desc    Register new user

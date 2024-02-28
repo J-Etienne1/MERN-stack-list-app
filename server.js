@@ -1,29 +1,6 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+import app from './app';
+import config from './config';
 
-const items = require("./routes/api/items");
+const { PORT } = config;
 
-const app = express();
-
-//Body Parser
-app.use(bodyParser.json());
-
-// DB Config
-const db = require("./config/keys").mongoURI;
-
-// Connect to MongoDB
-mongoose
-  .connect(db)
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err));
-
-
-  // Use Routes
-app.use("/api/items", items);
-
-
-
-const port = process.env.PORT || 5000;
-
-app.listen(port, () => console.log(`Sever started on post ${port}`));
+app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
